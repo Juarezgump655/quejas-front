@@ -1,0 +1,35 @@
+
+       
+        <form class="was-validated" [formGroup]="crearPuntosForm">
+        <div class="mb-3 ">
+          <label for="text" class="-form-label">Nombre del punto de atencion</label>
+          
+          <div class="col-sm-10">
+              <input type="text" maxlength="25" class="form-control" id="validationTextarea" formControlName="nombrePuntoAtencion"
+                  placeholder="nombre del punto de atencion" required="true">
+          </div>
+          <br>
+
+          <div class="col-sm-10">
+            <label for="text" class="col-sm-2 col-form-label">Region</label>
+            <div class="col-sm-10">
+              <mat-form-field appearance="legacy">
+                <mat-label id="regionLabel">Selecciona una region</mat-label>
+                <mat-select aria-labelledby="regionLabel" formControlName="idRegion" required="true"> 
+                  <mat-option *ngFor="let regiones of traerRegiones" [value]="regiones.idRegion">{{regiones.nombreRegion}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+            </div>
+
+            <div mat-dialog-actions class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary" (click)="onCancelar()">Cancelar</button>
+              <button type="button" class="btn btn-primary" mat-dialog-close (click)="guardarPuntosAtencion()">Guardar</button>
+            </div>
+        </div>
+
+      </div>
+
+      
+    </form>
+ 

@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.body{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    width: (100%-5rem);
+    height: 100%;
+    margin-left: 5rem;
+    z-index:0;
+    position: relative;
+    top:0;
+    transition: all .5s ease;
+    background: #f4f7fa;
+    padding: 3rem;
+
+}
+
+.body-trimmed{
+    width: (100%-16.5625rem);
+    margin-left: 16.5625rem;
+
+}
+.body-md-screen{
+    width: (100%-5rem);
+    margin-left:5rem;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+  }
+  

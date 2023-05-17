@@ -1,0 +1,40 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()" >
+
+    <!-- titulo -->
+    <mat-card class="main-title">
+        <div  >
+        <mat-card-title>FICHA DE QUEJA</mat-card-title>
+       </div>
+    </mat-card>
+
+<br><br>
+
+    <!-- contenido -->
+    <div class="formulario" *ngIf="fichaQueja">
+    <mat-card >
+        <mat-card-title class="titulo">correlativo</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.correlativo}}</mat-card-content>
+
+        <mat-card-title class="titulo">Tipo de queja</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.descripcionTipoQueja}}</mat-card-content>
+
+        <mat-card-title class="titulo">Detalle de queja</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.detalleQueja}}</mat-card-content>
+        
+        <mat-card-title class="titulo">fecha de ingreso</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.fechaIngreso}}</mat-card-content>
+
+        <mat-card-title class="titulo">medio de ingreso</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.nombreMedio}}</mat-card-content>
+    </mat-card>
+</div>
+  
+<div class="botones">
+    <button type="button" class="btn btn-primary regresar" [routerLink]="['../asignacion-queja']" >Regresar</button>
+    <button mat-raised-button  color="warn" class="rechazar" (click)="alertar()" >rechazar</button>
+    <button type="button" class="btn btn-primary asignar" (click)="openDialogAsignar()">Asignar</button>
+</div>
+
+
+</div>

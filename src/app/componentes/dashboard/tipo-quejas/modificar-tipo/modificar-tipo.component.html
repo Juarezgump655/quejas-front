@@ -1,0 +1,32 @@
+<form class="was-validated" [formGroup]="formularioModificarTipo">
+  <div class="mb-3 ">
+    <label for="text" class="-form-label">Siglas del tipo de queja</label>
+    <div class="col-sm-10">
+      <input type="text" maxlength="5" class="form-control input" id="validationTextarea" formControlName="siglasQueja"
+        placeholder="escriba las nuevas siglas, ejemplo: QMS" required="true" [(ngModel)]="registro.siglasQueja">
+    </div>
+    <br>
+
+
+    <label for="text" class="-form-label">Descripción tipo de queja</label>
+    <div class="col-sm-10">
+      <input type="text" maxlength="50" class="form-control input" id="validationTextarea" formControlName="descripcionQueja"
+        placeholder="escriba la descripción de la queja" required="true"  [(ngModel)]="registro.descripcionQueja">
+    </div>
+
+
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Estado</label>
+      <div class="col-sm-10">
+        <mat-slide-toggle color="primary" #estado class="margenObservaciones"
+          formControlName="idEstado" [(ngModel)]="registro.estado">
+          {{estado.checked ? 'Activo' : 'Inactivo'}}
+        </mat-slide-toggle>
+      </div>
+    </div>
+    <div mat-dialog-actions class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary" (click)="onCancelar()">Cancelar</button>
+      <button type="button" class="btn btn-primary" mat-dialog-close (click)="validarFormulario()">Guardar</button>
+    </div>
+  </div>
+</form>

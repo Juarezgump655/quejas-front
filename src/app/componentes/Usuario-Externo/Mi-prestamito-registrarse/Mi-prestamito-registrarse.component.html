@@ -1,0 +1,87 @@
+<body>
+  <nav class="navbar navbar-expand-sm">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button (click)="Home()" type="button" class="btn botonLogin">MI PRESTAMITO</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="irSesion()" type="button" class="btn botonLogin">YA TIENES USUARIO?</button>
+      </li>
+    </ul>
+  </nav>
+  <br> <br>
+  <div style="margin-left: 300px;">
+
+    <mat-card > 
+      <h1 class="text-center title"> REGISTRARSE</h1>
+      <form [formGroup]="formularioCreacionUsuario">
+        <br> <br>
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="dpi">Documento de identificacion </label>
+              <input formControlName="dpi" matInput type="number" max="999999999999999" required pattern="[0-9]{1,15}"
+                placeholder="Digite su Documento de identificacion">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="Nombre">Nombre </label>
+              <input matInput type="text" maxlength="100" formControlName="Nombre" required placeholder="[a-zA-Z]{1,50}"
+                placeholder="Digite sus Nombres">
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="apellidos">Apellidos </label>
+              <input matInput type="text" maxlength="100" formControlName="apellidos" required
+                placeholder="[a-zA-Z]{1,50}" requird placeholder="Digite sus Apellidos">
+            </mat-form-field>
+          </div>
+  
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="correo">Correo </label>
+              <input matInput type="email" formControlName="correo" requird placeholder="Digite su correo electronico"
+                required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+            </mat-form-field>
+          </div>
+  
+         
+        </div>
+  
+  
+        <div class="row ">
+
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="password">contraseña</label>
+              <input matInput type="password" minlength="6" formControlName="password" requird placeholder="********">
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:150px">
+              <label for="numeroTelefono">Numero de telefono </label>
+              <input matInput type="number" required placeholder="[0,9]{1,8}" formControlName="numeroTelefono" requird
+                placeholder="99999999">
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <br> <br>
+        <div class="row justify-content-md-center">
+          <button class="btn btn-success" (click)="CrearUsuario()" class="Guardar"> Guardar </button>
+        </div>
+      
+      </form>
+
+    </mat-card>
+
+  </div>
+
+
+</body>

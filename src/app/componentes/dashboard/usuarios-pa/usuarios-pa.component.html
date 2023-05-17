@@ -1,0 +1,62 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()" >
+  <router-outlet></router-outlet>
+
+
+
+
+<!-- titulo -->
+<mat-card>
+  <div class="main-title" >
+  <mat-card-title>Usuarios internos</mat-card-title>
+ </div>
+</mat-card>
+
+
+<br><br>
+     <div class="d-flex align-items-center add">
+      <button type="button" class="btn btn-primary" (click)="openDialog()">Agregar Usuario</button>
+    </div>
+
+<br><br>
+<mat-card>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre </th>
+        <th>Región</th>
+        <th>Punto de atención</th>
+        <th>cargo</th>
+        <th>Correo</th>
+        <th>estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+   <tbody>
+     <tr *ngFor="let listaUsuarios of obtenerElementosPorPagina(); let i=index ">
+       
+        <td>{{listaUsuarios.nombreUsuario}} {{listaUsuarios.apellidosUsuario}}</td>
+        <td>{{listaUsuarios.region}}</td>
+        <td>{{listaUsuarios.puntoAtencion}}</td>
+        <td>{{listaUsuarios.cargo}}</td>
+        <td>{{listaUsuarios.correo}}</td>
+        <td>{{listaUsuarios.estado}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="openDialogEditar(listaUsuarios.idUsuario,i)" >Modificar</button>
+        </td> 
+       
+
+      </tr> 
+    </tbody>
+  </table>
+  <div>
+   <button   class="Filtrar2" (click)="retrocederPagina()"> Anterior </button>
+    <span  style="font-size: 10;">    Página {{ paginaActual }} de {{ numeroDePaginas() }}  </span>
+    <button  class="Filtrar2"  (click)="avanzarPagina()"> Siguiente ></button> 
+  </div>
+</mat-card>
+
+
+
+  
+</div>

@@ -1,0 +1,24 @@
+.d-flex {
+    display: flex;
+
+  }
+  .justify-content-center {
+    justify-content: center;
+   margin-top: 40px;
+  }
+
+  .my-form-label {
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .campo1{
+    width: 300px;
+   
+  }
+
+  .input{
+    width: 300px;
+
+margin-top: 10px;
+}

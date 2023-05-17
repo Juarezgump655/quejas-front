@@ -1,0 +1,51 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()" >
+  <router-outlet></router-outlet>
+
+  <mat-card-title class="title">ASIGNACION DE QUEJA</mat-card-title>
+
+<mat-card *ngFor="let listarQuejas of Queja" class="mat-card">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Correlativo</th>
+        <th>Fecha de creacion</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+   <tbody>
+      <tr >
+        <td>{{listarQuejas.correlativo}}</td>  
+        <td>{{listarQuejas.fechaCreacion}}</td>
+        
+        <td>
+          <button type="button" class="btn btn-primary" [routerLink]="['../ficha']" [queryParams]="{idQueja: listarQuejas.idQueja}">Ver ficha</button>
+          <button type="button" class="btn btn-primary" (click)="openDialogAsignar(listarQuejas.idQueja)">Asignar</button>
+          <button mat-raised-button  color="warn" class="rechazar" (click)="alertar()">rechazar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+

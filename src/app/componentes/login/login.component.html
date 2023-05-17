@@ -1,0 +1,38 @@
+
+    <!DOCTYPE html>
+
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+     
+   
+      </head>
+      <body>
+        
+        <div class="center">
+          <img src="../../../assets/imagenes/login,png.png" width="50%" class="loginImg"> 
+          <h1>Login</h1>
+          <form [formGroup]="formLogueo">
+            <div class="txt_field">
+              <input type="text" required formControlName="usuario">
+              <span></span>
+              <label>Usuario</label>
+              
+            </div>
+            <div class="txt_field">
+              <input type="password" required formControlName="password">
+              <span></span>
+              <label>Contraseña</label>
+            </div>
+          
+            <input type="submit" value="Ingresar" (click)="ingresar()">
+            <div class="signup_link">
+              ¿No estas registrado? <a href="registrarse-usuario" routerLinkActive="active" class="nav-link ">Registrate</a>
+            </div>
+          </form>
+        </div>
+    
+      </body>
+    </html>
+    
+    

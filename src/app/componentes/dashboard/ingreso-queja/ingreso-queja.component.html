@@ -1,0 +1,114 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()" >
+  <router-outlet></router-outlet>
+  <div class="text-center">
+    <h1>Ingreso de Queja</h1>
+    <br> <br>
+
+    <mat-card > 
+      <form [formGroup]="formularioCreacionQueja">
+        <br> <br>
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="dpi">Medio Ingreso Queja </label>
+              <mat-select formControlName="medioIngresoQueja">
+                <mat-option>Selecciona una opcion...</mat-option>
+                <mat-option *ngFor="let listaMedioIngreso of listaMedioIngreso"  [value]="listaMedioIngreso.idMedioIngresoQueja">{{listaMedioIngreso.nombreMedio}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="medioIngresoQuejaField?.hasError('required')"> Necesita seleccionar una tipo de ingreso</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="nombreCuenta">Nombre </label>
+              <input matInput type="text" maxlength="100" formControlName="nombreCuenta" required placeholder="[a-zA-Z]{1,50}"
+                placeholder="Digite sus Nombres">
+                <mat-error *ngIf="nombreCuentaField?.hasError('required')">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row ">
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="telefono">Numero de telefono </label>
+              <input matInput type="number" required placeholder="[0,9]{1,8}" formControlName="telefono" requird
+                placeholder="99999999">
+                <mat-error *ngIf="telefonoField?.hasError('required')">Ingrese un numero de telefono valido</mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="correoElectronico">Correo </label>
+              <input matInput type="email" formControlName="correoElectronico" requird placeholder="Digite su correo electronico">
+              <mat-error *ngIf="correoElectronicoField?.hasError('required')">Digite un correo electronico valido</mat-error>
+            </mat-form-field>
+          </div>
+  
+         
+        </div>
+  
+  
+        <div class="row ">
+
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="puntoAtencion">Punto de Atencion</label>
+              <mat-select formControlName="puntoAtencion">
+                <mat-option>Selecciona una opcion...</mat-option>
+                <mat-option *ngFor="let listaPuntosAtencion of listaPuntosAtencion"  [value]="listaPuntosAtencion.idPuntoAtencion">{{listaPuntosAtencion.nombrePuntoAtencion}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="puntoAtencionField?.hasError('required')">Debe seleccionar un punto de Atencion</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="tipoQueja">Tipo de Queja </label>
+              <mat-select formControlName="tipoQueja">
+                <mat-option>Selecciona una opcion...</mat-option>
+                <mat-option *ngFor="let listaTipoQueja of listaTipoQueja"  [value]="listaTipoQueja.idTipoQueja">{{listaTipoQueja.siglasQueja}} {{listaTipoQueja.descripcionQueja}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="tipoQuejaField?.hasError('required')">Debe seleccionar un tipo de queja</mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="text-center">
+            <mat-form-field class="campo-identificacion">
+              <mat-label> Detalle de la Queja</mat-label>
+              <textarea matInput formControlName="detalleQueja" maxlength="1000"  ></textarea>
+              <mat-error *ngIf="detalleQuejaField?.hasError('required')">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+          </div>       
+        </div>
+  
+        <br>
+        <div id="box2">
+          <!-- <button  mat-raised-button id="selectButton" (click)="fileImput.click()" >Seleccionar Archivo</button> -->
+          <input type="file" #fileImput accept="application/pdf" (change)="selectFiles($event)" />
+          <span id="filename">
+            {{filename}}
+          </span>
+
+        </div>
+        
+        <div id="box3">
+            <span>{{message}}</span>
+        </div>
+       <br>
+        <br> <br>
+        <div class="row justify-content-md-center">
+          <button class="btn btn-success Filtrar" id="uploadButton" (click)="validarFormulario()" > Guardar </button>
+        </div>
+      
+      </form>
+
+    </mat-card>
+
+</div>
+</div>

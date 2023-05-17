@@ -1,0 +1,100 @@
+h1{
+    font-family: 'Roboto Black', Courier, monospace;
+    color:Black;
+    font-size: 60pt;
+  }
+
+label{
+    font-family: 'Segoe UI Black', Courier, monospace;
+    color:Black;
+    font-size: 15pt;
+}
+
+.asientos {
+  margin: 15px;
+  padding: 15px;
+}
+.centrar {
+    margin: 40px;
+    padding: 15px;
+ }
+
+ th {
+  size: 20%;
+  width: 10px;
+  height: 10px;
+ }
+
+
+ .navbar {
+  font-family: 'Roboto Black', Courier, monospace;
+  background-color: #516FFF;
+  font-size: 20pt;
+}
+ 
+.Filtrar{
+  width: 175px;
+  height: 50px;
+  font-family: 'Roboto Medium', Courier, monospace;
+  font-size: 15pt;
+  color:white;
+  background-color:#0C6187;
+  border-color: white;
+} 
+.navegacion {
+    background-color: #333;
+     
+  color: #fff;
+  padding: 10px;
+   
+  list-style: none;
+    
+  margin: 0;
+    
+  padding: 0;
+
+  display: inline-block;
+    
+  margin-right: 20px;
+   
+  margin-right: 0;
+   
+  color: #fff;
+   
+  text-decoration: none;
+  
+  text-decoration: underline;
+}
+
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.step-item {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: lightgray;
+  margin-bottom: 10px;
+}
+
+.step-item.completed {
+  background-color: #13FE00;
+}
+
+.step-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step-list li {
+  margin-bottom: 10px;
+}
+
+.step-list li.completed {
+  color: #13FE00;
+}

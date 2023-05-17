@@ -1,0 +1,36 @@
+
+.input{
+    width: 300px;
+margin-bottom: 35px;
+margin-top: 10px;
+}
+
+  
+.campo1{
+   width: 150px;
+   margin-bottom: 15px;
+}
+
+.campo2{
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.campo3{
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.d-flex {
+    display: flex;
+  }
+  .justify-content-center {
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .campo{
+    margin-top: 22px;
+    width: 300px;
+    margin-bottom: 50px;
+  }

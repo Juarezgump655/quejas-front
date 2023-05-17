@@ -1,0 +1,112 @@
+<form class="was-validated" [formGroup]="crearUserForm">
+
+    <div class="row">
+        <div class="col">
+    <div class="mb-3 ">
+        <label for="text" class="-form-label">Nombre del usuario</label>
+        <div class="col-sm-10">
+        <input type="text" maxlength="25" class="form-control input" id="validationTextarea" formControlName="Nombre"
+        required pattern="[a-zA-Z]{1,50}"
+            placeholder="nombre del usuario" required="true">
+        </div>
+    </div>
+</div>
+    <div class="col">
+        <label for="text" class="-form-label">Apellidos del usuario</label>
+        <div class="col-sm-10">
+        <input type="text" maxlength="25" class="form-control input" formControlName="apellidos"
+            placeholder="nombre del usuario" required="true">
+        </div>
+    
+    </div>
+</div>
+
+
+        <br><br>
+
+
+
+
+    <div class="row">
+        <div class="col ">
+            <label for="text">Punto de atencion</label>
+        <div class="col-sm-10 ">
+            <mat-form-field appearance="legacy" class="campo1">
+            <mat-label id="puntoAtencionLabel">Selecciona un punto de atencion</mat-label>
+            <mat-select aria-labelledby="puntoAtencionLabel" formControlName="idPuntoatencion" required="true">
+                <mat-option *ngFor="let puntosAtencion of traerPuntos" [value]="puntosAtencion.idPuntoAtencion">{{puntosAtencion.nombrePunto}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+        
+        <div class="col">
+            <!-- <label for="text" class=" col-form-label">Cargo</label> -->
+            <label for="id_cargo">Cargo</label>
+        <div class="col-sm-10">
+            
+            <mat-form-field appearance="legacy" class="campo1">
+                
+            <mat-label>Elije un cargo</mat-label>
+            <mat-select aria-labelledby="puntoAtencionLabel" formControlName="id_cargo" required="true">
+                <mat-option *ngFor="let cargo of traerCargo" [value]="cargo.idCargo">{{cargo.nombreCargo}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+        </div>
+
+            <div class="row">
+                <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+                <label for="dpi">Documento de identificacion </label>
+                <input formControlName="dpi" matInput type="number" maxlength="13" required pattern="[0-9]{1,15}"
+                  placeholder="Digite su Documento de identificacion" oninput="javascript: if (this.value.length > this.maxLength) 
+                  this.value = this.value.slice(0, this.maxLength);">
+              </mat-form-field>
+            </div>
+              <br>
+              <div class="col">
+              <mat-form-field appearance="standard" style="width:300px">
+                <label for="correo">Correo </label>
+                <input matInput type="email" formControlName="correo" required="true">
+                <mat-error *ngIf="correoElectronicoField?.hasError('required')">Digite un correo electronico valido</mat-error>
+              </mat-form-field>
+            </div>
+            </div>
+
+              
+
+            <div class="row">
+                <div class="col">
+              <mat-form-field appearance="standard" class="campo1">
+                <label for="password">contraseña</label>
+                <input matInput type="password" minlength="6" formControlName="password" requird placeholder="********">
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field appearance="standard" class="campo1">
+                <label for="numeroTelefono">Numero de telefono </label>
+                <input matInput type="number"  formControlName="numeroTelefono" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) 
+                this.value = this.value.slice(0, this.maxLength);">
+              </mat-form-field>
+            </div>
+
+            <div mat-dialog-actions class="d-flex justify-content-center gap-5">
+                <button type="button" class="btn btn-primary" (click)="onCancelar()">Cancelar</button>
+                <button type="button" class="btn btn-primary" mat-dialog-close (click)="validarFormulario()">Guardar</button>
+            </div>
+            </div>
+
+        
+       
+       
+    
+
+
+
+
+
+</form>

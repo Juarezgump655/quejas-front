@@ -1,0 +1,43 @@
+
+.formulario{
+    width: 600px;
+    margin-left: 350px;
+}
+
+.titulo{
+    font-size: large;
+    
+    text-align: center;
+}
+
+.sub{
+    font-size: large;
+    text-align: center;
+    margin-bottom: 50px;
+  
+}
+
+.botones{
+    text-align: center;
+    margin-top: 80px;
+   
+}
+
+.asignar{
+    margin-left: 90px;
+    width: 150px;
+}
+
+.rechazar{
+    width: 150px;
+}
+
+.regresar{
+    margin-right: 90px;
+    width: 150px;
+}
+
+.dropRegiones{
+    margin-top: 25px;
+    margin-left: 50px;
+}

@@ -1,0 +1,120 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+
+
+  <body>
+    <br> <br>
+    <div class="text-center">
+      <h1>Quejas</h1>
+      <br> <br>
+
+    </div>
+
+    <form [formGroup]="formularioReporteria">
+      <mat-card class="text-center">
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="standard" style="width: 300px">
+              <label for="FechaInicio">Fecha Desde </label>
+              <input matInput type="date" formControlName="FechaInicio" placeholder="Fecha Desde">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="standard" style="width: 300px"> 
+              <label for="FechaFinal">Fecha Hasta </label>
+              <input matInput type="date" formControlName="FechaFinal" placeholder="Fecha Hasta">
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field appearance="standard" style="width: 300px">
+              <label for="correlativo">No. de Queja</label>
+              <input matInput type="text" formControlName="correlativo" placeholder="Digite un Numero de Queja">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="puntoAtencion">Punto de Atencion</label>
+              <mat-select formControlName="puntoAtencion">
+                <mat-option>Selecciona una opcion...</mat-option>
+                <mat-option *ngFor="let listaPuntosAtencion of listaPuntosAtencion"  [value]="listaPuntosAtencion.idPuntoAtencion">{{listaPuntosAtencion.nombrePuntoAtencion}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field appearance="standard" style="width:300px">
+              <label for="region">Regiones</label>
+              <mat-select formControlName="region">
+                <mat-option>Selecciona una opcion...</mat-option>
+                <mat-option *ngFor="let regiones of regiones"  [value]="regiones.idRegion">{{regiones.nombre}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </mat-card>
+
+    </form>
+    <br> <br>
+    <div class="text-center">
+      <button class="btn btn-success" class="Filtrar" (click)="filtrar()"> Nueva Consulta </button>
+    </div>
+    <div class="centrar">
+      <table class="table table-striped text-center" id="table">
+        <thead class="table-dark">
+          <tr>
+            <th class="cabecera-tabla">No. de Queja</th>
+            <th class="cabecera-tabla">Punto de Atención</th>
+            <th class="cabecera-tabla">Región</th>
+            <th class="cabecera-tabla">Estado</th>
+            <th class="cabecera-tabla">Resultado</th>
+            <th class="cabecera-tabla">Medio de Ingreso</th>
+            <th class="cabecera-tabla">Fecha de creación</th>
+            <th class="cabecera-tabla">Tiempo de atención</th>
+            <th class="cabecera-tabla">Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let listaQuejas of obtenerElementosPorPagina()">
+            <th>{{listaQuejas.correlativo}}</th>
+            <th>{{listaQuejas.puntoAtencion}}</th>
+            <th>{{listaQuejas.region}}</th>
+            <th>{{listaQuejas.estado}}</th>
+            <th>{{listaQuejas.estado}}</th>
+            <th> {{listaQuejas.medioIngreso}}</th>
+            <th>{{listaQuejas.fechaCreacion | date:'dd/MM/yyyy hh:mm:ss' }}</th>
+            <th>{{listaQuejas.tiempoOperacion}} horas</th>
+            <th>
+              <button (click)="verDetalle(listaQuejas.correlativo)" class="btn btn-info"
+                            >Detalle </button>
+            </th>
+          </tr>
+
+        </tbody>
+      </table>
+      <div>
+        <button class="Filtrar2" (click)="retrocederPagina()"> Anterior </button>
+        <span style="font-size: 10;"> Página {{ paginaActual }} de {{ numeroDePaginas() }} </span>
+        <button class="Filtrar2" (click)="avanzarPagina()"> Siguiente ></button>
+      </div>
+
+      <br> <br>
+      <div class="text-center">
+        <div class="col">
+          <button (click)="Imprimirpdf() " class="btn btn-success" class="Filtrar"> Imprimir</button>
+
+          <button (click)="exportexcel() " class="btn btn-success" class="Excel"> Excel</button>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+
+</div>

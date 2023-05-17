@@ -1,0 +1,77 @@
+.body{
+    
+    width: (100%-5rem);
+    height: 100%;
+    margin-left: 5rem;
+    z-index:0;
+    position: relative;
+    top:0;
+    transition: all .5s ease;
+    background: #f4f7fa;
+    padding: 3rem;
+
+}
+
+.body-trimmed{
+    width: (100%-16.5625rem);
+    margin-left: 16.5625rem;
+
+}
+.body-md-screen{
+    width: (100%-5rem);
+    margin-left: 5rem;
+}
+.body{
+    
+    width: (100%-5rem);
+    height: 100%;
+    margin-left: 5rem;
+    z-index:0;
+    position: relative;
+    top:0;
+    transition: all .5s ease;
+    background: #f4f7fa;
+
+}
+.body-trimmed{
+    width: (100%-16.5625rem);
+    margin-left: 16.5625rem;
+
+}
+.body-md-screen{
+    width: (100%-5rem);
+    margin-left: 5rem;
+}
+h2{
+    font-family: 'Roboto Black', Courier, monospace;
+    color:Black;
+    font-size: 40pt;
+  }
+  .centrar {
+    margin: 40px;
+    padding: 15px;
+ }
+ h1{
+    font-family: 'Roboto Black', Courier, monospace;
+    color:Black;
+    font-size: 50pt;
+  }
+  h2{
+    font-family: 'Roboto Black', Courier, monospace;
+    color:Black;
+    font-size: 40pt;
+  }
+  .Filtrar{
+    width: 175px;
+    height: 50px;
+    font-family: 'Roboto MEdium', Courier, monospace;
+    font-size: 15pt;
+    color:white;
+    background-color:#0C6187;
+    border-color: white;
+  } 
+
+  .campo-identificacion{
+    width: 500px;
+    font-family: 'Roboto MEdium', Courier, monospace;
+  }

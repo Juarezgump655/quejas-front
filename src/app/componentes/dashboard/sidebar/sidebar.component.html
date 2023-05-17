@@ -1,0 +1,28 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+
+    <!--abrir y cerrar el sidebar(creoxD)-->
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">M</button>
+        <div class="logo-text" *ngIf="collapsed">Mi Prestamito</div>
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+
+    <!--opciones disponibles en el sidenav-->
+    <ul class="sidenav-nav">
+
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a  class="sidenav-nav-link" [routerLink]="[data.routelink]" routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact:true}">
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                    <span class="sidenav-link-text" *ngIf="collapsed">{{data.Label}}</span>
+                
+            </a>
+        </li>
+
+
+    </ul>
+
+</div>
+

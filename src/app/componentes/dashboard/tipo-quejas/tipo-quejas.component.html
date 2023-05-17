@@ -1,0 +1,51 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+
+<div class="body" [ngClass]="getBodyClass()" >
+  <router-outlet></router-outlet>
+  <!-- titulo -->
+  <mat-card>
+    <div class="main-title" >
+    <mat-card-title>TIPOS DE QUEJA PARA AUTOCONSULTAS</mat-card-title>
+   </div>
+</mat-card>
+
+<!-- Botón para agregar tipo de queja -->
+<br><br>
+     <div class="d-flex align-items-center add">
+      <button type="button" class="btn btn-primary" (click)="openDialog()" >Agregar Tipo de queja</button>
+    </div>
+<br><br>
+
+    <!-- matcard con tabla de las quejas existentes -->
+    <mat-card>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Siglas del tipo de queja</th>
+            <th>Descripción del tipo de queja</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+       <tbody>
+          <tr *ngFor="let listarTipoQuejas of obtenerElementosPorPagina();let i =index">
+            <td>{{listarTipoQuejas.siglasQueja}}</td>  
+            <td>{{listarTipoQuejas.descripcionQueja}}</td>
+            <td>  {{listarTipoQuejas.estado}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="openDialogEditar(listarTipoQuejas.idTipoQueja, i)">Modificar</button>
+            </td>
+
+
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <button   class="Filtrar2" (click)="retrocederPagina()"> Anterior </button>
+        <span  style="font-size: 10;">    Página {{ paginaActual }} de {{ numeroDePaginas() }}  </span>
+        <button  class="Filtrar2"  (click)="avanzarPagina()"> Siguiente ></button>
+      </div>
+    </mat-card>
+
+
+</div>

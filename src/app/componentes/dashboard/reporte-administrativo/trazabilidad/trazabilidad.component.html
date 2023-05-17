@@ -1,0 +1,27 @@
+<h1 class="text-center">TRAZABILIDAD DE LA QUEJA</h1>
+
+
+  <div class="row">
+    <div class="col">
+      <div class="step-indicator">
+        <div class="step-item" [class.completed]="presentadaSelected"></div>
+        <div class="step-item" [class.completed]="asignadaSelected"></div>
+        <div class="step-item" [class.completed]="analisisSelected"></div>
+        <div class="step-item" [class.completed]="procedenteSelected"></div>
+        <div class="step-item" [class.completed]="seguimientoSelected"></div>
+        <div class="step-item" [class.completed]="finalizadaSelected"></div>
+      </div>
+    </div>
+  
+    <div class="col">
+      <ul class="step-list">
+        <li [class.completed]="presentadaSelected">Presentada</li>
+        <li [class.completed]="asignadaSelected">Esperando a ser asignada</li>
+        <li [class.completed]="analisisSelected">En Análisis</li>
+        <li [class.completed]="procedenteSelected">Procedente</li>
+        <li [class.completed]="seguimientoSelected">Seguimiento</li>
+        <li [class.completed]="finalizadaSelected">Finalizada</li>
+      </ul>
+    </div>
+  </div>
+

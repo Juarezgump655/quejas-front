@@ -1,0 +1,78 @@
+
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+
+<!-- se pone este div inicial para hacer llamado al metodo de typescript que cambia la clase del css
+     para que la barra lateral no tape el contenido del propio componente -->
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+    <!-- de aquí en adelante va toda la vista -->
+    <mat-card>
+    <div class="main-title" >
+    <mat-card-title>PUNTOS DE ATENCION</mat-card-title>
+   
+   </div>
+</mat-card>
+
+<br>
+<br>
+
+<!-- dropdown para elegir region -->
+<form [formGroup]="regionesForm">
+<div class="d-flex align-items-center dropdown">
+  <mat-form-field appearance="fill" class="me-3">
+    <mat-label>Selecciona una region</mat-label>
+
+    <mat-select formControlName="idRegion">
+      <mat-option>selecciona una opcion...</mat-option>
+   
+
+      <mat-option (click)="traerTablaPuntos(regiones.idRegion)" *ngFor="let regiones of traerRegiones" 
+      [value]="regiones.idRegion">{{regiones.nombreRegion}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- boton para agregar puntos de atención -->
+  <button type="button" class="btn btn-primary" (click)="openDialog()">Agregar punto de Atención</button>
+ <!--  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearPunto">
+    Agregar Punto de Atención
+  </button> -->
+</div>
+</form>
+   
+   <br><br><br>
+
+<!-- mat card en donde se mostrara la tabla de puntos de atención -->
+<mat-card>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> nombre del punto de atención</th>
+        <th>Región</th>
+        <th>estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+   <tbody>
+      <tr *ngFor="let listarPuntos of listarPuntos; let i=index">
+        <td>{{listarPuntos.nombrePunto}}</td>
+        <td>{{listarPuntos.nombreRegion}}</td>
+        <td>{{listarPuntos.nombreEstado}}</td>
+        
+        <td>
+          <button type="button" class="btn btn-primary" (click)="openDialogEditar(listarPuntos.idPuntoAtencion,i)">modificar</button>
+          
+        </td>
+      </tr>
+    </tbody> 
+  </table>  
+
+</mat-card>
+
+
+
+
+
+
+
+</div>
+
+

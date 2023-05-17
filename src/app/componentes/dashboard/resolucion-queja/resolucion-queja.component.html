@@ -1,0 +1,6 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+
+<div class="body" [ngClass]="getBodyClass()" >
+    <router-outlet></router-outlet>
+    <h1>resolución de quejas</h1>
+</div>

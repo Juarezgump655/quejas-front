@@ -1,0 +1,18 @@
+.btn{
+    margin-left: 25px;
+}
+
+.input{
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.d-flex {
+    display: flex;
+  }
+  .justify-content-center {
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
