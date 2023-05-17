@@ -11,11 +11,6 @@ mat-card{
     border: 1px solid #16CCCC;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
     width: 900px;
-    /*
-     display: flex;
-        justify-content: center;
-        align-items: center;
-    */
 }
 body{
     background-color: #16CCCC;
@@ -32,7 +27,6 @@ h1{
 .colmargin{
     margin-top: 25px;
 }
-
 
   .Guardar{
     font-family: 'Segoe UI Black', Courier, monospace;
