@@ -61,8 +61,5 @@
   "engines": {
     "node": "14.16.1",
     "npm": "6.14.12"
-  },
-  "assets": [
-    "src/assets/imagenes"
-  ]
+  }
 }
