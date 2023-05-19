@@ -54,7 +54,7 @@ export class AsignacionQuejaComponent implements OnInit {
   }
 
   
-  alertar(){
+  alertar(idQueja:number){
     Swal.fire({
       title: '¿Está seguro de que quiere rechazar este registro?',
       text: '',
@@ -64,17 +64,18 @@ export class AsignacionQuejaComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result)=>{
       if(result.isConfirmed){
-        this.openDialogRechazar();
+        this.openDialogRechazar(idQueja);
       }else{
   
       }
     })
   }
 
-  openDialogRechazar(){
+  openDialogRechazar(idQueja:number){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.maxWidth = '800px'; 
   dialogConfig.width = '600px';
+  dialogConfig.data={idQueja:idQueja};
   const dialogRef= this.dialog.open(RechazarQuejaComponent, dialogConfig);
   }
 

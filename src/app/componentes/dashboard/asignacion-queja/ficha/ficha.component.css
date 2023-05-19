@@ -30,15 +30,12 @@
 
 
 .formulario{
-    width: 600px;
-    margin-left: 350px;
+    
+    display:flex;
+    justify-content: center;
+  
 }
 
-.titulo{
-    font-size: large;
-    
-    text-align: center;
-}
 
 .sub{
     font-size: large;
@@ -48,8 +45,9 @@
 }
 
 .botones{
-    text-align: center;
     margin-top: 80px;
+    display:flex;
+    justify-content: center;
    
 }
 
@@ -65,4 +63,9 @@
 .regresar{
     margin-right: 90px;
     width: 150px;
+}
+
+.titulo{
+   display:flex;
+    justify-content: center;
 }

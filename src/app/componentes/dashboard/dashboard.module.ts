@@ -40,6 +40,7 @@ import { FichaComponent } from './asignacion-queja/ficha/ficha.component';
 import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
 import { TrazabilidadComponent } from './reporte-administrativo/trazabilidad/trazabilidad.component';
 import { AsignarQuejaComponent } from './asignacion-queja/asignar-queja/asignar-queja.component';
+import { RechazarQuejaComponent } from './asignacion-queja/rechazar-queja/rechazar-queja.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -60,7 +61,8 @@ import { AsignarQuejaComponent } from './asignacion-queja/asignar-queja/asignar-
    AgregarUsuarioComponent,
    ModificarUsuarioComponent,
    FichaComponent,
-   AsignarQuejaComponent
+   AsignarQuejaComponent,
+   RechazarQuejaComponent
   ],
   imports: [
     CommonModule,

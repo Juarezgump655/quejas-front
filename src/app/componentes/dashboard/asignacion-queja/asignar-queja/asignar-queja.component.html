@@ -19,7 +19,7 @@
 
 
 
-  <div class="row">
+  <div class="row dropdowns" >
     <div class="col">
       <label for="text">Regiones</label>
       <div class="col-sm-10">
@@ -32,17 +32,23 @@
       </div>
     </div>
     
-    <div class="col" *ngIf="puntoAtencionView">
-      <label for="text">Puntos de Atención</label>
-      <div>
-        <mat-form-field appearance="legacy" class="campo1">
-          <mat-label id="puntoAtencionLabel">Selecciona un punto de atención</mat-label>
-          <mat-select required="true">
-            <mat-option *ngFor="let listaPuntos of listaPuntos" [value]="listaPuntos.idPuntoAtencion">{{listaPuntos.nombrePunto}}</mat-option>
-          </mat-select>
-        </mat-form-field>
+
+   
+      <div class="col" *ngIf="puntoAtencionView">
+        <form class="was-validated" [formGroup]="asignarPuntoForm">
+        <label for="text">Puntos de Atención</label>
+        <div>
+          <mat-form-field appearance="legacy" class="campo1">
+            <mat-label id="puntoAtencionLabel">Selecciona un punto de atención</mat-label>
+            <mat-select required="true" formControlName="idPuntoAsignado">
+              <mat-option *ngFor="let listaPuntos of listaPuntos" [value]="listaPuntos.idPuntoAtencion">{{listaPuntos.nombrePunto}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
       </div>
-    </div>
+   
+    
   </div>
   
 
@@ -60,5 +66,5 @@
   <div class="botones">
    
     <button mat-raised-button  color="warn" class="rechazar" (click)="onCancelar()">regresar</button>
-    <button type="button" class="btn btn-primary asignar" disabled="habilitarAsignacion">Asignar</button>
+    <button type="button" class="btn btn-primary asignar" (click)="validarFormulario()">Asignar</button>
 </div>

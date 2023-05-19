@@ -11,7 +11,8 @@ import { trazabilidadTable } from '../componentes/Models/Trazabilidad';
   providedIn: 'root'
 })
 export class QuejaService {
-  private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja";
+private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja"; 
+
 constructor(private httpClient: HttpClient) { }
 
 
@@ -105,4 +106,9 @@ getTrazabiliad(correlativo: string): Observable<trazabilidadTable[]>{
   return this.httpClient.get<trazabilidadTable[]>(`${this.baseURL}/TrazabilidadCorrelativo`+`/${correlativo}`);
   
 }
+
+asignarPunto(idQueja:number, queja1: Queja): Observable<Queja>{
+  return this.httpClient.put<Queja>(`${this.baseURL}/asignarPuntoQueja/${idQueja}`, queja1);
+}
+
 }
