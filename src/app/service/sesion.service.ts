@@ -8,7 +8,8 @@ import { usuarioSesion, Usuario } from '../componentes/Models/usuario';
   providedIn: 'root'
 })
 export class SesionService {
-  private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/auth";
+  // private baseURL = "http://localhost:8080/Mi-prestamito/api/auth";
+ private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/auth";
 constructor(private httpClient: HttpClient) { }
 
 iniciarSesion(sesion:usuarioSesion): Observable<token> {

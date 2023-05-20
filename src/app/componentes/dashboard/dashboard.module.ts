@@ -38,7 +38,6 @@ import { AgregarUsuarioComponent } from './usuarios-pa/agregar-usuario/agregar-u
 import { ModificarUsuarioComponent } from './usuarios-pa/modificar-usuario/modificar-usuario.component';
 import { FichaComponent } from './asignacion-queja/ficha/ficha.component';
 import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
-import { TrazabilidadComponent } from './reporte-administrativo/trazabilidad/trazabilidad.component';
 import { AsignarQuejaComponent } from './asignacion-queja/asignar-queja/asignar-queja.component';
 import { RechazarQuejaComponent } from './asignacion-queja/rechazar-queja/rechazar-queja.component';
 @NgModule({

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MedioIngresoQueja } from '../componentes/Models/MedioIngresoQueja';
 import { PuntosAtencionList } from '../componentes/Models/PuntosAtencion';
-import { Queja, Correlativo, tableQueja, tablaAsignacionQueja, fichaQueja } from '../componentes/Models/Queja';
+import { Queja, Correlativo, tableQueja, tablaAsignacionQueja, fichaQueja, QuejaProjection } from '../componentes/Models/Queja';
 import { TipoQuejaList } from '../componentes/Models/TIpoQueja';
 import { tap } from 'rxjs/operators';
 import { trazabilidadTable } from '../componentes/Models/Trazabilidad';
@@ -11,8 +11,7 @@ import { trazabilidadTable } from '../componentes/Models/Trazabilidad';
   providedIn: 'root'
 })
 export class QuejaService {
-private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja"; 
-
+  private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja";
 constructor(private httpClient: HttpClient) { }
 
 
@@ -37,6 +36,9 @@ listarQuejaPorPuntoAtencion(idPuntosAtencion:number): Observable<tableQueja[]> {
   return this.httpClient.get<tableQueja[]>(`${this.baseURL}/QuejaporPuntosAtencion/`+`${idPuntosAtencion}`);
 }
 
+ListarQuejaSeguimientoPA(idPuntosAtencion:number): Observable<QuejaProjection[]> {
+ return this.httpClient.get<QuejaProjection[]>(`${this.baseURL}/quejasSeguimientoPA/`+`${idPuntosAtencion}`);
+}
 
 private cacheMedioIngreso!: MedioIngresoQueja[];
 

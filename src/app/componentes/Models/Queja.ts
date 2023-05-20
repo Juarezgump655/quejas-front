@@ -51,3 +51,15 @@ export interface fichaQueja{
     descripcionTipoQueja:string;
     detalleQueja: string;
 }
+
+export interface QuejaProjection {
+    idQueja: number;
+    correlativo: String;
+    puntoAtencion: string;
+    region: string;
+    estado: string;
+    medioIngreso: string;
+    fechaCreacion: string;
+    detalle: string;
+    nombre: string;
+  }
