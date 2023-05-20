@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { TipoQuejasComponent } from './tipo-quejas/tipo-quejas.component';
 import { FichaComponent } from './asignacion-queja/ficha/ficha.component';
+import { FichaQuejaPaComponent } from './resolucion-queja/ficha-queja-pa/ficha-queja-pa.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
     {path:'tipo-queja',component:TipoQuejasComponent},
    {path:'principal',component:DashboardComponent},
     {path:'',redirectTo:'dashboard/principal'},
-    {path:'ficha',component:FichaComponent}
+    {path:'ficha',component:FichaComponent},
+    {path:'ficha-pa',component: FichaQuejaPaComponent}
 
   ]}
 ];

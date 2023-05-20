@@ -21,7 +21,7 @@
               <th>{{listaQuejas.correlativo}}</th>
               <th>{{listaQuejas.detalle}}</th>
               <th>
-              <button type="button" class="btn btn-primary" [routerLink]="['../ficha']" [queryParams]="{idQueja: listaQuejas.idQueja}">Ver ficha</button>
+              <button type="button" class="btn btn-primary" [routerLink]="['../ficha-pa']" [queryParams]="{idQueja: listaQuejas.correlativo}">Ver ficha</button>
                 <button  class="btn btn-danger" style="margin-left: 5px">Botón Ingresar </button>
                 <button class="btn btn-primary" style="margin-left: 5px">Detalle </button>
               </th>

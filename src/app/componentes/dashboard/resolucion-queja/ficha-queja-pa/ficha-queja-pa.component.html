@@ -1,3 +1,5 @@
-<p>
-  ficha-queja-pa works!
-</p>
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()" >
+  <router-outlet></router-outlet>
+
+  <mat-card-title class="title">FICHA QUEJA</mat-card-title>
