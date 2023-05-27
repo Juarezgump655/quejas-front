@@ -7,8 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FileServiceService {
-  private baseURL ="http://localhost:8080/Mi-prestamito/api/files";
- // private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/files";
+  //private baseURL ="http://localhost:8080/Mi-prestamito/api/files";
+  private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/files";
 constructor(private httpClient: HttpClient) { }
 
 uploadFile(file: File,correlativo:string): Observable<any> {

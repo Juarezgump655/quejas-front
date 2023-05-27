@@ -99,7 +99,7 @@ export class AsignarQuejaComponent implements OnInit {
       idPuntoAsignado: this.asignarPuntoForm.get('idPuntoAsignado')?.value ,
       usuariomodifico: this.tokenService.getUserName(),
       fechamodificacion: desdeStr,
-      idEstado:1
+      idEstado:2
     }
 
   this.service.asignarPunto(this.idQueja,quejaAsignada).toPromise().then(QUEJA=>{

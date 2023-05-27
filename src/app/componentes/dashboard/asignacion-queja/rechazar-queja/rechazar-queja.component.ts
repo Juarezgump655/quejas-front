@@ -81,7 +81,7 @@ this.rechazarQuejaForm= this.formBuilder.group({
     const quejaRechazada: Queja={
       usuariomodifico: this.tokenService.getUserName(),
       fechamodificacion: desdeStr,
-      idEstado:2,
+      idEstado:3,
       fechaFinal: new Date(),
       justificacionRechazo: this.rechazarQuejaForm.get('justificacionRechazo')?.value
     }
