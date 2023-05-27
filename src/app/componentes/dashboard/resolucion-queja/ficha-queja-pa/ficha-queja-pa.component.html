@@ -1,5 +1,64 @@
 <app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
-<div class="body" [ngClass]="getBodyClass()" >
-  <router-outlet></router-outlet>
+<div class="body" [ngClass]="getBodyClass()">
 
-  <mat-card-title class="title">FICHA QUEJA</mat-card-title>
+  <form [formGroup]="formularioDetalle">
+  <div class="formulario" *ngIf="Fichaqueja">
+    <mat-card>
+      <mat-card-title class="text-center">FICHA DE QUEJA</mat-card-title>
+      <br>
+      <mat-card-title class="titulo">Correlativo</mat-card-title>
+      <mat-card-content class="sub">{{Fichaqueja.correlativo}}</mat-card-content>
+
+      <mat-card-title class="titulo">Etapa</mat-card-title>
+      <mat-card-content class="sub">{{Fichaqueja.estado}}</mat-card-content>
+
+      <mat-card-title class="titulo">Detalle de queja</mat-card-title>
+      <mat-card-content class="sub">{{Fichaqueja.detalle}}</mat-card-content>
+
+      <mat-card-title class="titulo">Fecha Creacion</mat-card-title>
+      <mat-card-content class="sub">{{Fichaqueja.fechaCreacion| date:'dd/MM/yyyy hh:mm:ss' }} </mat-card-content>
+
+      <mat-card-title class="titulo">Usuario Creacion</mat-card-title>
+      <mat-card-content class="sub">{{Fichaqueja.nombre}}</mat-card-content>
+
+      <mat-card-title class="titulo">Punto de Atencion</mat-card-title>
+      <mat-card-content class="sub">{{Fichaqueja.puntoAtencion}}</mat-card-content>
+      
+      <div *ngIf="vistaDetalle" class="text-center">
+        <mat-card-title class="titulo">{{nombreField}}</mat-card-title>
+        <mat-card-content class="sub" > 
+          <mat-form-field class="campo-identificacion" style="width: 500px;">
+            <textarea  matInput formControlName="detalleQUeja" > </textarea>
+            <mat-error *ngIf="detalleQUejaField?.hasError('required')"> Este campo es obligatorio</mat-error>
+          </mat-form-field>
+          </mat-card-content>
+          <div id="box2">
+            <!-- <button  mat-raised-button id="selectButton" (click)="fileImput.click()" >Seleccionar Archivo</button> -->
+            <input type="file" #fileImput accept="application/pdf" (change)="selectFiles($event)" />
+            <span id="filename">
+              {{filename}}
+            </span>
+  
+          </div>       
+          <div id="box3">
+              <span>{{message}}</span>
+          </div>
+          <br>
+          <br>
+      
+      </div>
+
+     
+      <mat-card-actions>
+        <td> <button mat-mini-fab color="warn" class="btnDescargar" (click)="descargarArchivo()">
+          <mat-icon>download</mat-icon></button>
+          <button type="button" class="btn btn-primary asignar" (click)="procedente()" *ngIf="vistaQUeja"  >Procedente</button>
+          <button mat-raised-button color="warn" class="rechazar" (click)="alertar()" *ngIf="vistaQUeja" >rechazar</button>
+          <button type="button" class="btn btn-primary asignar" (click)="ingresarDetalle()" *ngIf="!vistaQUeja"  >ingresar detalle</button>
+          <button mat-raised-button color="warn" class="rechazar" (click)="resolver()" *ngIf="!vistaQUeja" >Resolver</button>
+          <button type="button" class="btn btn-primary regresar" [routerLink]="['../resolucion-queja']">Regresar</button>
+        </mat-card-actions>
+    </mat-card>
+
+
+  </div>

@@ -26,6 +26,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { AutoConsultaComponent } from './componentes/auto-consulta/auto-consulta.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import { AutoConsultaComponent } from './componentes/auto-consulta/auto-consulta
     HttpClientModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+  
 
   ]
 

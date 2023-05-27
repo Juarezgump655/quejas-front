@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 const USER_TOKEN = 'auth-token';
 const USER_NAME = 'auth-user';
 const USER_ROL = 'auth-rol';
+const USER_PTA = 'auth-pta';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,10 +41,19 @@ public getUserName(): string {
   return sessionStorage.getItem(USER_NAME)!;
 }
 
+public setPuntoAtencion(puntoAtencion: string): void {
+  window.sessionStorage.removeItem(USER_PTA);
+  window.sessionStorage.setItem(USER_PTA, puntoAtencion);
+}
+
+public getPuntoAtencion(): string {
+  return sessionStorage.getItem(USER_PTA)!;
+}
+
+
 public logOut(): void {
   window.sessionStorage.clear();
 }
-
 
 
 }

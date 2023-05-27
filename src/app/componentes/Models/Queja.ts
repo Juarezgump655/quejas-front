@@ -63,3 +63,13 @@ export interface QuejaProjection {
     detalle: string;
     nombre: string;
   }
+
+
+  export interface QuejaProjectionPA {
+    correlativo: string;
+    estado: string;
+    detalle: string;
+    puntoAtencion: string;
+    fechaCreacion: string;
+    nombre: string;
+  }

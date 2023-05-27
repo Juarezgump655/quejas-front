@@ -50,6 +50,7 @@ ingresar(){
     this.tokenService.setToken(token.jwt);
     this.tokenService.setUserName(token.nombre);
     this.tokenService.setRol(token.rol);
+    this.tokenService.setPuntoAtencion(token.puntoAtencion);
     localStorage.clear();
 
     this.router.navigateByUrl('/dashboard/principal');

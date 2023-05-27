@@ -69,3 +69,25 @@
    display:flex;
     justify-content: center;
 }
+.formulario{
+    
+    display:flex;
+    justify-content: center;
+  
+}
+
+
+.sub{
+    font-size: large;
+    text-align: center;
+    margin-bottom: 50px;
+  
+}
+
+
+.botones{
+    margin-top: 80px;
+    display:flex;
+    justify-content: center;
+   
+}
