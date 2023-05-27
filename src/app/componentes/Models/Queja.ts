@@ -17,6 +17,8 @@ export class Queja {
     idEstado?: number=0;
     idPuntoAsignado?: number=0;
     justificacionRechazo?: string='';
+    justificacionPunto?: string='';
+    resultadoSeguimiento?:string='';
     fechaFinal?: Date;
 }
 
@@ -73,3 +75,23 @@ export interface QuejaProjection {
     fechaCreacion: string;
     nombre: string;
   }
+
+export interface tablaSeguimiento{
+    idQueja:number;
+    correlativo: string;
+    etapa: String;
+}
+
+
+export interface tablaSeguimientoDetalle{
+    correlativo: string;
+    etapa: String;
+    justificacion: String;
+    fechaCreacion: String;
+    usuarioCreacion: String;
+    nombrePunto: String;
+}
+
+export interface puntoAsignadoCentralizador{
+    idPuntoAsignado: number;
+}

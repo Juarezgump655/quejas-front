@@ -1,3 +1,4 @@
+import { puntoAsignadoCentralizador, tablaSeguimiento, tablaSeguimientoDetalle } from './../componentes/Models/Queja';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -11,8 +12,8 @@ import { trazabilidadTable } from '../componentes/Models/Trazabilidad';
   providedIn: 'root'
 })
 export class QuejaService {
- //   private baseURL = "http://localhost:8080/Mi-prestamito/api/Queja";
- private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja";
+ private baseURL = "http://localhost:8080/Mi-prestamito/api/Queja";
+ /* private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja"; */
   constructor(private httpClient: HttpClient) { }
 
 
@@ -140,4 +141,24 @@ export class QuejaService {
     );
   }
   
+  
+  tablaCentralizadorSeguimiento():Observable<tablaSeguimiento[]>{
+    return this.httpClient.get<tablaSeguimiento[]>(`${this.baseURL}/tablaSeguimientoQueja`);
+  }
+  
+  tablaSeguimientoQuejaDetalle(idQueja:number):Observable<tablaSeguimientoDetalle>{
+    return this.httpClient.get<tablaSeguimientoDetalle>(`${this.baseURL}/tablaSeguimientoDetalle`+`/${idQueja}`);
+  }
+  
+  resolverQueja(idQueja:number, queja2: Queja): Observable<Queja>{
+    return this.httpClient.put<Queja>(`${this.baseURL}/resolverQueja/${idQueja}`, queja2);
+  }
+  
+  asignarPuntoCentralizador(idQueja:number): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}/findPuntoAsignado`+`/${idQueja}`);
+  }
+  
 }
+
+
+

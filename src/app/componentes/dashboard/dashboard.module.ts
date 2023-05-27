@@ -42,7 +42,9 @@ import { AsignarQuejaComponent } from './asignacion-queja/asignar-queja/asignar-
 import { RechazarQuejaComponent } from './asignacion-queja/rechazar-queja/rechazar-queja.component';
 import { FichaQuejaPaComponent } from './resolucion-queja/ficha-queja-pa/ficha-queja-pa.component';
 import {MatIconModule} from '@angular/material/icon';
-
+import { FichaSeguimientoComponent } from './seguimiento-centralizador/ficha-seguimiento/ficha-seguimiento.component';
+import { ResolverComponent } from './seguimiento-centralizador/resolver/resolver.component';
+import { RechazarCentralizadorComponent } from './seguimiento-centralizador/rechazar-centralizador/rechazar-centralizador.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -65,6 +67,9 @@ import {MatIconModule} from '@angular/material/icon';
    FichaComponent,
    AsignarQuejaComponent,
    RechazarQuejaComponent,
+   FichaSeguimientoComponent,
+   ResolverComponent,
+   RechazarCentralizadorComponent,
    FichaQuejaPaComponent
   ],
   imports: [

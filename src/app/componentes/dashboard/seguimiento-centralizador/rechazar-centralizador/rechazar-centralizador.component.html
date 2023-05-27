@@ -1,0 +1,16 @@
+<div class="col-sm-10 justify-content-center">
+  <form class="was-validated" [formGroup]="rechazarQuejaForm">
+    <label for="text" class="form-label">Ingrese una Justificacion</label>
+          
+
+    <input type="text" maxlength="500" class="form-control " formControlName="justificacionRechazo"
+        placeholder="Justificacion" required="true">
+
+  </form>
+
+</div>
+
+<div mat-dialog-actions class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary" (click)="onCancelar()">Cancelar</button>
+              <button mat-raised-button  color="warn" class="btn btn-primary" >Rechazar</button>
+            </div>

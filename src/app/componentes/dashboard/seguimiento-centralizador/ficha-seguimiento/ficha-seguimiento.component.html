@@ -1,0 +1,56 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()" >
+  <div class="titulo">
+
+
+    <mat-card class="main-title">
+        <div  >
+        <mat-card-title>DETALLE DE QUEJA</mat-card-title>
+       </div>
+    </mat-card>
+  </div>
+  <br><br>
+
+    <!--  Contenido-->
+  <div class="formulario" *ngIf="fichaQueja">
+    <mat-card >
+        <mat-card-title class="titulo">No. de Queja</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.correlativo}}</mat-card-content>
+
+        <mat-card-title class="titulo">Etapa</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.etapa}}</mat-card-content>
+
+        <mat-card-title class="titulo">Justificacion</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.justificacion}}</mat-card-content>
+        
+        <mat-card-title class="titulo">fecha de creación</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.fechaCreacion}}</mat-card-content>
+
+        <mat-card-title class="titulo">Usuario de creación</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.usuarioCreacion}}</mat-card-content>
+
+        <mat-card-title class="titulo">Punto de atención</mat-card-title>
+        <mat-card-content class="sub">{{fichaQueja.nombrePunto}}</mat-card-content>
+    </mat-card>
+</div>
+
+<mat-card-actions class="btnDescargar">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button mat-mini-fab color="warn" (click)="descargarArchivo()">
+      <mat-icon>download</mat-icon>
+    </button>
+    <span style="margin-left: 8px;">Descargar documento asociado</span>
+  </div>
+</mat-card-actions>
+
+
+
+
+<div class="botones">
+  <button type="button" class="btn btn-primary regresar" [routerLink]="['../seguimiento-centralizador']" >Regresar</button>
+  <button mat-raised-button  color="warn" class="rechazar"  (click)="openDialogRechazar()">rechazar</button>
+  <button type="button" class="btn btn-primary asignar" (click)="openDialogResolver()">resolver</button>
+</div>
+
+
+</div>

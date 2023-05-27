@@ -1,0 +1,16 @@
+<div class="col-sm-10 justify-content-center">
+  <form class="was-validated"[formGroup]="resolverQuejaForm">
+    <label for="text" class="form-label">Respuesta</label>
+          
+
+    <input type="text" maxlength="500" class="form-control " formControlName="resultadoSeguimiento"
+        placeholder="Justificacion" required="true">
+
+  </form>
+
+</div>
+
+<div mat-dialog-actions class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary" (click)="onCancelar()">Cancelar</button>
+              <button type="button" class="btn btn-primary" (click)="validarFormulario()">Guardar</button>
+            </div>

@@ -7,8 +7,27 @@
   <mat-card-title class="title"> SEGUIMIENTO DE QUEJA</mat-card-title>
 
 
-<mat-card>
-
+<mat-card *ngFor="let listarQuejas of Queja" class="mat-card">
+  <table class="table table-hover" >
+    <thead>
+      <tr>
+        <th>correlativo</th>
+        <th>etapa</th>
+        <th>detalle</th>
+      </tr>
+    </thead>
+   <tbody>
+      <tr >
+        <td>{{listarQuejas.correlativo}}</td>  
+        <td>{{listarQuejas.etapa}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" [routerLink]="['../ficha-seguimiento']" [queryParams]="{idQueja: listarQuejas.idQueja}">Ver Detalle</button>
+          <button type="button" class="btn btn-primary" (click)="openDialogResolver(listarQuejas.idQueja)">resolver</button>
+          <button mat-raised-button  color="warn" class="rechazar" (click)="openDialogRechazar(listarQuejas.idQueja)">rechazar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   
 </mat-card>

@@ -74,8 +74,8 @@ this.rechazarQuejaForm= this.formBuilder.group({
   }
 
   rechazarQueja(){
-    let fecha = new Date();
-    let desdeStr = `${fecha.getDate()}-${('0' + (fecha.getMonth() + 1)).slice(-2)}-${fecha.getFullYear()}`;
+   let fecha = new Date();
+    let desdeStr = `${fecha.getDate()}-${('0' + (fecha.getMonth() + 1)).slice(-2)}-${fecha.getFullYear()}`; 
 
 
     const quejaRechazada: Queja={
