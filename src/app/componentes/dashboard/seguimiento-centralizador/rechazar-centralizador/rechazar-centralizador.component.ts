@@ -68,11 +68,23 @@ rechazarQueja(){
   const quejaResuelta: Queja={
     usuariomodifico: this.tokenService.getUserName(),
     fechamodificacion: desdeStr,
-    fechaFinal: new Date(),
     idPuntoAsignado:this.idPunto,
     resultadoSeguimiento: this.rechazarQuejaForm.get('resultadoSeguimiento')?.value
 
   }
+
+  this.service.resolverQueja(this.idQueja,quejaResuelta).toPromise().then(data=>{
+    Swal.fire({
+      titleText: `Queja Reasignada Exitosamente`,
+      icon: 'success',
+      showCloseButton: true,
+      showConfirmButton: false
+  }).then(()=>{
+    
+    window.location.href='dashboard/seguimiento-centralizador';
+  })
+
+  })
 }
 
 }
