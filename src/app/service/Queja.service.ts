@@ -12,8 +12,8 @@ import { trazabilidadTable } from '../componentes/Models/Trazabilidad';
   providedIn: 'root'
 })
 export class QuejaService {
- private baseURL = "http://localhost:8080/Mi-prestamito/api/Queja";
- /* private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja"; */
+/*  private baseURL = "http://localhost:8080/Mi-prestamito/api/Queja"; */
+  private baseURL = "https://muestras-medicas.herokuapp.com/Mi-prestamito/api/Queja"; 
   constructor(private httpClient: HttpClient) { }
 
 
