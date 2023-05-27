@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MedioIngresoQueja } from '../componentes/Models/MedioIngresoQueja';
 import { PuntosAtencionList } from '../componentes/Models/PuntosAtencion';
-import { Queja, Correlativo, tableQueja, tablaAsignacionQueja, fichaQueja, QuejaProjection, QuejaProjectionPA } from '../componentes/Models/Queja';
+import { Queja, Correlativo, tableQueja, tablaAsignacionQueja, fichaQueja, QuejaProjection, QuejaProjectionPA, tablaSeguimiento, tablaSeguimientoDetalle } from '../componentes/Models/Queja';
 import { TipoQuejaList } from '../componentes/Models/TIpoQueja';
 import { tap } from 'rxjs/operators';
 import { trazabilidadTable } from '../componentes/Models/Trazabilidad';
@@ -138,6 +138,21 @@ export class QuejaService {
         console.error('Error al actualizar la justificación:', error);
       }
     );
+  }
+  tablaCentralizadorSeguimiento():Observable<tablaSeguimiento[]>{
+    return this.httpClient.get<tablaSeguimiento[]>(`${this.baseURL}/tablaSeguimientoQueja`);
+  }
+  
+  tablaSeguimientoQuejaDetalle(idQueja:number):Observable<tablaSeguimientoDetalle>{
+    return this.httpClient.get<tablaSeguimientoDetalle>(`${this.baseURL}/tablaSeguimientoDetalle`+`/${idQueja}`);
+  }
+  
+  resolverQueja(idQueja:number, queja2: Queja): Observable<Queja>{
+    return this.httpClient.put<Queja>(`${this.baseURL}/resolverQueja/${idQueja}`, queja2);
+  }
+  
+  asignarPuntoCentralizador(idQueja:number): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}/findPuntoAsignado`+`/${idQueja}`);
   }
   
 }
