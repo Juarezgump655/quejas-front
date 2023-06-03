@@ -1,0 +1,36 @@
+
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+  <br>
+  <br>
+<h1 class="text-center">Detalle de Venta</h1>}
+<br>
+<br>
+<div *ngIf="venta">
+  <table class="table table-striped text-center" id="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Producto</th>
+        <th>Precio unitario</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detalle of venta.detalle_venta">
+        <td>{{ detalle.nombre_producto }}</td>
+        <td>{{ detalle.precio_unitario }}</td>
+        <td>{{ detalle.cantidad }}</td>
+        <td>{{ detalle.subtotal }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class=" text-center">
+  <button type="button" class="btn btn-primary " (click)="regresar()" >Regresar</button>
+</div>
+
+

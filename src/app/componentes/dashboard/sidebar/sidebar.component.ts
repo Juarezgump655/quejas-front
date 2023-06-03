@@ -7,6 +7,7 @@ import { navDataCuentaHabiente } from './nav-data-cuentaHabiente';
 import { navDataOperador } from './nav-data-operador';
 import { navDataCentralizador } from './nav-data-centralizador';
 import { navDataReceptor } from './nav-data-receptor';
+import { navDataBetaIstock } from './nav-data-beta';
 
 
 interface SideNavToggle{
@@ -35,7 +36,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
-    this.validarRol();
+    this.navData=navDataBetaIstock;
   }
 
   // autenticar() {  

@@ -45,6 +45,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { FichaSeguimientoComponent } from './seguimiento-centralizador/ficha-seguimiento/ficha-seguimiento.component';
 import { ResolverComponent } from './seguimiento-centralizador/resolver/resolver.component';
 import { RechazarCentralizadorComponent } from './seguimiento-centralizador/rechazar-centralizador/rechazar-centralizador.component';
+import { BetaInventarioComponent } from './beta-inventario/beta-inventario.component';
+import { AgregarProductoComponent } from './beta-inventario/agregar-producto/agregar-producto.component';
+import { ModificarProductoComponent } from './beta-inventario/modificar-producto/modificar-producto.component';
+import { VentasInvetarioComponent } from './ventas-invetario/ventas-invetario.component';
+import { DetalleVentaComponent } from './ventas-invetario/detalle-venta/detalle-venta.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -70,7 +75,12 @@ import { RechazarCentralizadorComponent } from './seguimiento-centralizador/rech
    FichaSeguimientoComponent,
    ResolverComponent,
    RechazarCentralizadorComponent,
-   FichaQuejaPaComponent
+   FichaQuejaPaComponent,
+   BetaInventarioComponent,
+   AgregarProductoComponent,
+   ModificarProductoComponent,
+   VentasInvetarioComponent,
+   DetalleVentaComponent
   ],
   imports: [
     CommonModule,

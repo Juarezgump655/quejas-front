@@ -1,0 +1,46 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+
+  <h1 class="text-center">Ventas</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <table class="table table-striped text-center" id="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Nombre Cliente</th>
+        <th>Correo</th>
+        <th>Fecha</th>
+        <th>Total de la Venta</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of obtenerElementosPorPagina() ">
+        <td>{{ producto.cliente.nombre }}</td>
+        <td>{{ producto.cliente.correo }}</td>
+        <td>{{ producto.fecha }}</td>
+        <td>Q. {{ producto.total_venta }}</td>
+        <td class="table-columna2">
+          <button type="button" class="btn btn-primary regresar" [routerLink]="['../detalle-Venta']"  [queryParams]="{idQueja: producto.id_venta}"><i class="fal fa-plus" style="color: white;"></i></button>
+       </td>
+      </tr>
+
+    </tbody>
+</table>
+<div>
+  <button class="Filtrar2" (click)="retrocederPagina()"> Anterior </button>
+  <span style="font-size: 10;"> Página {{ paginaActual }} de {{ numeroDePaginas() }} </span>
+  <button class="Filtrar2" (click)="avanzarPagina()"> Siguiente ></button>
+</div>
+<div class="text-center">
+  <div class="col">
+    <button (click)="Imprimirpdf() " class="btn btn-success" class="Filtrar"><i class="fal fa-file-pdf"></i> PDF</button>
+
+    <button (click)="exportexcel() " class="btn btn-success" class="Excel"><i class="fal fa-file-excel"></i> Excel</button>
+  </div>
+
+</div>
+</div>

@@ -23,8 +23,10 @@ interface SideNavToggle{
 export class ReporteAdministrativoComponent implements OnInit {
   isSideNavCollapsed=false;
   screenWidth: number = 0;
+  
   public elementosPorPagina = 5;
   public paginaActual = 1;
+
   regiones: Region[] = [];
   listaPuntosAtencion: PuntosAtencion[] = [];
   formularioReporteria: FormGroup= this.formBuilder.group({

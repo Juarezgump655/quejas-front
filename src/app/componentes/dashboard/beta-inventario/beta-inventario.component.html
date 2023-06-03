@@ -1,0 +1,47 @@
+<app-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-sidebar>
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+
+  <h1 class="text-center">Productos en inventario</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <table class="table table-striped text-center" id="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of obtenerElementosPorPagina() ">
+        <td>{{ producto.nombre }}</td>
+        <td>Q. {{ producto.precio }}</td>
+        <td>{{ producto.stock }}</td>
+        <td class="table-columna2">
+        <button  (click)="modificar(producto.id)"   type="button" class="btn btn-info"><i class="fal fa-pencil" style="color: white;"></i></button>
+        <button (click)="eliminar(producto.id, producto.nombre)" class ="btn btn-danger" style="margin-left: 10px"><i class="fal fa-trash"></i></button> 
+        <button  (click)="agregar()"   class="btn btn-primary" style="margin-left: 10px"> <i class="fal fa-plus"></i></button> 
+      </td>
+      </tr>
+
+    </tbody>
+</table>
+<div>
+  <button class="Filtrar2" (click)="retrocederPagina()"> Anterior </button>
+  <span style="font-size: 10;"> Página {{ paginaActual }} de {{ numeroDePaginas() }} </span>
+  <button class="Filtrar2" (click)="avanzarPagina()"> Siguiente ></button>
+</div>
+<div class="text-center">
+  <div class="col">
+    <button (click)="Imprimirpdf() " class="btn btn-success" class="Filtrar"><i class="fal fa-file-pdf"></i> PDF</button>
+
+    <button (click)="exportexcel() " class="btn btn-success" class="Excel"><i class="fal fa-file-excel"></i> Excel</button>
+  </div>
+
+</div>
+
+</div>

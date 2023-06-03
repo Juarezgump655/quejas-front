@@ -7,9 +7,10 @@ import { LoginComponent } from './componentes/login/login.component';
 import { MiPrestamitoRegistrarseComponent } from './componentes/Usuario-Externo/Mi-prestamito-registrarse/Mi-prestamito-registrarse.component';
 import { AuthGuardGuard } from './componentes/helpers/auth-guard.guard';
 import { AutoConsultaComponent } from './componentes/auto-consulta/auto-consulta.component';
+import { HomeInventarioComponent } from './componentes/home-Inventario/home-Inventario.component';
 
 const routes: Routes = [
-  {path : 'menu-principal', component:HomeComponent},
+  {path : 'menu-principal', component:HomeInventarioComponent},
   {path:'',redirectTo:'menu-principal',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'registrarse-usuario',component:MiPrestamitoRegistrarseComponent},

@@ -15,6 +15,9 @@ import { TipoQuejasComponent } from './tipo-quejas/tipo-quejas.component';
 import { FichaComponent } from './asignacion-queja/ficha/ficha.component';
 import { FichaQuejaPaComponent } from './resolucion-queja/ficha-queja-pa/ficha-queja-pa.component';
 import { FichaSeguimientoComponent } from './seguimiento-centralizador/ficha-seguimiento/ficha-seguimiento.component';
+import { BetaInventarioComponent } from './beta-inventario/beta-inventario.component';
+import { VentasInvetarioComponent } from './ventas-invetario/ventas-invetario.component';
+import { DetalleVentaComponent } from './ventas-invetario/detalle-venta/detalle-venta.component';
 
 
 const routes: Routes = [
@@ -36,7 +39,10 @@ const routes: Routes = [
     {path:'',redirectTo:'dashboard/principal'},
     {path:'ficha',component:FichaComponent},
     {path:'ficha-seguimiento',component:FichaSeguimientoComponent},
-    {path:'ficha-pa',component: FichaQuejaPaComponent}
+    {path:'ficha-pa',component: FichaQuejaPaComponent},
+    {path:'patalla-beta', component:BetaInventarioComponent},
+    {path:'pantalla-beta-ventas', component:VentasInvetarioComponent},
+    {path:'detalle-Venta', component:DetalleVentaComponent}
 
   ]}
 ];

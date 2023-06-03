@@ -26,18 +26,17 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { AutoConsultaComponent } from './componentes/auto-consulta/auto-consulta.component';
+import { HomeInventarioComponent } from './componentes/home-Inventario/home-Inventario.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     LoginComponent,
     MiPrestamitoRegistrarseComponent,
-    AutoConsultaComponent
-  
-   
-
-  ],
+    AutoConsultaComponent,
+    HomeInventarioComponent
+   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,useClass: Interceptor, multi: true

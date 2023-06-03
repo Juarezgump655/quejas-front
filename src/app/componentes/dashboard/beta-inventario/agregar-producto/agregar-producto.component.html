@@ -1,0 +1,32 @@
+<form [formGroup]="formularioProducto">
+  <mat-card class="text-center">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="standard" style="width: 300px">
+          <label for="Producto">Nombre Del producto</label>
+          <input matInput type="text" formControlName="Producto">
+          <mat-error *ngIf="ProductoField?.hasError('required')">Debe escribir el nombre del producto</mat-error>           
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="standard" style="width: 300px"> 
+          <label for="precio">Precio </label>
+          <input matInput type="number" formControlName="precio" >
+          <mat-error *ngIf="precioField?.hasError('required')">Debe escribir el Precio del producto</mat-error>   
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field appearance="standard" style="width: 300px"> 
+          <label for="Stock">Stock </label>
+          <input matInput type="number" formControlName="Stock" >
+          <mat-error *ngIf="StockField?.hasError('required')">Debe escribir el Stock del producto</mat-error>   
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary" (click)="guardarProducto()">Guardar</button>
+    </div>
+  </mat-card>
+
+</form>
